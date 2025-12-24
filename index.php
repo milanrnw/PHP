@@ -52,11 +52,34 @@ if (isset($_REQUEST["btn_submit"])) {
 <head>
     <title>Student Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <style>
+        body {
+            background: teal;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-    <a href="index.php">Home</a> | <a href="dashboard.php">Dashboard</a>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: teal;">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.php">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container mt-5">
         <div class="col-4">
             <h1>Add Student</h1>
@@ -64,13 +87,15 @@ if (isset($_REQUEST["btn_submit"])) {
             <form method="POST" class="pt-2">
 
                 <label>Name</label>
-                <input type="text" name="name" class="form-control" required>
-                <br> <br>
+                <input type="text" name="name" class="form-control" style="background-color: #e0f2f1;"
+                    required> <br> <br>
                 <label>Age</label>
-                <input type="number" name="age" class="form-control" required>
+                <input type="number" name="age" class="form-control" style="background-color: #e0f2f1;"
+                    required>
                 <br> <br>
                 <label>Course</label>
-                <input type="text" name="course" class="form-control" required>
+                <input type="text" name="course" class="form-control" style="background-color: #e0f2f1;"
+                    required>
                 <br> <br>
                 <button name="btn_submit" class="btn btn-primary">Add Student</button>
 

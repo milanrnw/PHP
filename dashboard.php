@@ -40,19 +40,37 @@ if (isset($_POST['btn-delete'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: black;
-            color: powderblue;
+            background: teal;
+            color: white;
         }
     </style>
 </head>
 
 <body>
-    <a href="index.php">Home</a> | <a href="dashboard.php">Dashboard</a>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: teal;">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.php">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="container mt-5">
         <div class="col-8">
-            <table class="table table-striped table-dark table-hover text-center">
-                <thead class="text-center">
+            <table class="table  table-light table-hover text-center table-bordered border-dark">
+                <thead class="text-center table-dark">
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">NAME</th>
@@ -65,18 +83,18 @@ if (isset($_POST['btn-delete'])) {
                     <?php
                     while ($data = mysqli_fetch_assoc($result)) { ?>
                         <tr>
-                            <th scope="row"><?php echo $data['id'] ?></th>
-                            <td><?php echo $data['name'] ?></td>
-                            <td><?php echo $data['age'] ?></td>
-                            <td><?php echo $data['course'] ?></td>
-                            <td>
+                            <th scope="row" style="background-color: teal !important;"><?php echo $data['id'] ?></th>
+                            <td style="background-color: teal !important;"><?php echo $data['name'] ?></td>
+                            <td style="background-color: teal !important;"><?php echo $data['age'] ?></td>
+                            <td style="background-color: teal !important;"><?php echo $data['course'] ?></td>
+                            <td style="background-color: teal !important;">
                                 <form method="POST">
                                     <button name="btn-delete" class="btn btn-danger">DELETE</button>
                                     <input type="hidden" name="delete_id" value="<?php echo $data['id'] ?>">
                                 </form>
 
                             </td>
-                            <td>
+                            <td style="background-color: teal !important;">
                                 <button class="btn btn-warning">EDIT</button>
                             </td>
                         </tr>
