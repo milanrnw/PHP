@@ -1,5 +1,5 @@
 <?php
-header("Access-Control_Allow-Methods: POST");
+header("Access-Control-Allow-Methods: POST");
 header("Content-Type: application/json");
 
 include("../config/config.php");
