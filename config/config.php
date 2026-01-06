@@ -52,8 +52,18 @@ class config
     public function updateStudent($name, $age, $course, $id)
     {
         $this->connectDB();
-        $query = "UPDATE students SET name='$name', age=$age, course='$course' WHERE id=$id";
-        return mysqli_query($this->conn, $query); //boolean update(true/false)
+
+        $result = $this->fetchSingleStudent($id);
+
+        $single_student = mysqli_fetch_assoc($result);
+
+        if ($single_student) {
+            $query = "UPDATE students SET name='$name', age=$age, course='$course' WHERE id=$id";
+            return mysqli_query($this->conn, $query);
+        } else {
+            return false;
+        }
     }
+
 }
 ?>
