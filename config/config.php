@@ -65,5 +65,20 @@ class config
         }
     }
 
+    public function loginUser($email, $password)
+    {
+        $this->connectDB();
+        $query = "SELECT * FROM users WHERE email = '$email'";
+        $res = mysqli_query($this->conn, $query);
+
+        $user = mysqli_fetch_assoc($res);
+
+        if ($user) {
+            return password_verify($password, $user['password']);
+        } else {
+            return false;
+        }
+    }
+
 }
 ?>
